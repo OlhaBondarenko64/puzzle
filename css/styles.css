@@ -1,0 +1,238 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  background-color: #414141;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: center;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.puzzle-frame {
+  padding: 1rem;
+  /* calculated puzzle items */
+}
+
+.puzzle-frame .puzzle-img {
+  position: relative;
+  background-size: 534px 534px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin: 0.1rem;
+  background-image: url("../img/img.jpg");
+}
+
+.puzzle-frame .puzzle-img.full {
+  height: 534px;
+  width: 534px;
+}
+
+.puzzle-frame .puzzle-img_0 {
+  height: 178px;
+  width: 178px;
+  background-position: -0px -0px;
+}
+
+.puzzle-frame .puzzle-img_1 {
+  height: 178px;
+  width: 178px;
+  background-position: -178px -0px;
+}
+
+.puzzle-frame .puzzle-img_2 {
+  height: 178px;
+  width: 178px;
+  background-position: -356px -0px;
+}
+
+.puzzle-frame .puzzle-img_3 {
+  height: 178px;
+  width: 178px;
+  background-position: -0px -178px;
+}
+
+.puzzle-frame .puzzle-img_4 {
+  height: 178px;
+  width: 178px;
+  background-position: -178px -178px;
+}
+
+.puzzle-frame .puzzle-img_5 {
+  height: 178px;
+  width: 178px;
+  background-position: -356px -178px;
+}
+
+.puzzle-frame .puzzle-img_6 {
+  height: 178px;
+  width: 178px;
+  background-position: -0px -356px;
+}
+
+.puzzle-frame .puzzle-img_7 {
+  height: 178px;
+  width: 178px;
+  background-position: -178px -356px;
+}
+
+.puzzle-frame .puzzle-img_8 {
+  height: 178px;
+  width: 178px;
+  background-position: -356px -356px;
+}
+
+.puzzle-info {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.puzzle-info__img {
+  padding: 2rem;
+}
+
+.puzzle-info__img img {
+  width: 150px;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.prevent_click {
+  pointer-events: none;
+}
+
+.correct {
+  -webkit-animation: corect .5s ease;
+          animation: corect .5s ease;
+  -webkit-animation-delay: .2s;
+          animation-delay: .2s;
+}
+
+@-webkit-keyframes corect {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes corect {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/* Result alert */
+.cover {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  top: 0;
+}
+
+.score {
+  margin: 30vh auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #666;
+  color: #3d3d3d;
+  font-weight: 600;
+  width: 300px;
+  position: relative;
+  text-align: center;
+}
+
+.score__head {
+  font-size: 2rem;
+}
+
+.score__time {
+  font-size: 1.3rem;
+}
+
+/* Buttons */
+.reset {
+  display: none;
+}
+
+.button {
+  padding: 20px 50px;
+  border-radius: 30px;
+  font-size: 25px;
+  color: #FFF;
+  text-decoration: none;
+  background-color: #E74C3C;
+  z-index: 999;
+}
+/*# sourceMappingURL=styles.css.map */

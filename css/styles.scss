@@ -1,0 +1,158 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	background-color: #414141;
+	color: #fff;
+	font-size: 16px;
+	line-height: 1;
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+.main{
+    display: flex;
+    place-content: center;
+    height: 100%;
+    min-height: 100vh;
+}
+  
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+  }
+
+  .puzzle-frame{
+    padding: 1rem;
+
+    .puzzle-img {
+        position: relative;
+        background-size: 534px 534px;
+        background-repeat: no-repeat;
+        display: inline-block;
+        margin: 0.1rem;
+        background-image : url('../img/img.jpg');
+        &.full {
+            height: 534px;
+            width: 534px;
+        }
+    }
+    /* calculated puzzle items */
+    $i : 0;
+    $top : 0;
+    $left: 0;
+    @for $i from 0 through 8 {	
+            @if $left == 534{
+                $left : 0;
+                $top : $top + 178;
+            }	
+        .puzzle-img_#{$i}{
+            height: 178px;
+            width: 178px;
+            background-position: -#{$left}px  -#{$top}px;
+            }
+        $left : $left + 178;
+    }
+  }
+  
+  .puzzle-info{
+    flex-direction: column;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__img{
+        padding: 2rem;
+        img{
+            width: 150px;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+  }
+  
+    .prevent_click{
+        pointer-events: none;
+    }
+    .correct {
+        animation: corect .5s ease;
+        animation-delay: .2s;
+    }
+  
+  @keyframes corect {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.25);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+/* Result alert */
+  .cover{
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    top: 0;
+  }
+  
+  .score{
+    margin: 30vh auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #666;
+    color: #3d3d3d;
+    font-weight: 600;
+    width: 300px;
+    position: relative;
+    text-align: center;
+    &__head{
+        font-size: 2rem;
+    }
+    &__time{
+        font-size: 1.3rem;
+    }
+  }
+  
+ /* Buttons */ 
+  
+  .reset{
+      display: none;
+  }
+  
+  
+  .button{ 
+    padding: 20px 50px;
+    border-radius: 30px;
+    font-size: 25px;
+    color: #FFF;
+    text-decoration: none;
+    background-color: #E74C3C;
+    z-index: 999;
+  }
+  
